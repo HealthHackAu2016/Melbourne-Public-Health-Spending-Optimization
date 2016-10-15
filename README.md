@@ -12,7 +12,5 @@ Name		  	| work
 ------------- | -------------
 Ruth  | Back end
 Matt  | Back end
-Kevin | Front end
 Sally	| Front end
-Peter	| UX Design
 Frank	| PM

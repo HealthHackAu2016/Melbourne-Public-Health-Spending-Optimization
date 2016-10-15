@@ -34,7 +34,6 @@ def import_csv():
   # Iterate through CSVs and import each row into the database table
   # FIXME: This doesn't do deduplication of rows
   for f in csvs:
-    print(f)
     with open(os.path.join(file_dir, f)) as f_handle:
       reader = csv.reader(f_handle)
       for field in reader:

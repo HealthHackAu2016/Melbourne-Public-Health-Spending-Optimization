@@ -10,11 +10,11 @@ import backend
 
 interventionConstraints = {}
 interventionConstraints["Breastfeeding promotion"] = {}
-interventionConstraints["Breastfeeding promotion"]['min'] = 1000
-interventionConstraints["Breastfeeding promotion"]['max'] = 2000
-interventionConstraints["Multiple micronutrient supplementation"] = {}
-interventionConstraints["Multiple micronutrient supplementation"]['min'] = 1000
-interventionConstraints["Multiple micronutrient supplementation"]['max'] = 2000
+interventionConstraints["Breastfeeding promotion"]['min'] = 6000000
+interventionConstraints["Breastfeeding promotion"]['max'] = 10000000
+interventionConstraints["Vitamin A supplementation"] = {}
+interventionConstraints["Vitamin A supplementation"]['min'] = 4000000
+interventionConstraints["Vitamin A supplementation"]['max'] = 5000000
 
 best = backend.getResult(interventionConstraints)
 print best

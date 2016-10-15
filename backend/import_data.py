@@ -16,14 +16,14 @@ def import_csv():
   # Create a table for our data
   cur.execute("""CREATE TABLE IF NOT EXISTS
   data(
-    'fval',
-    'Prophylactic zinc supplementation',
-    'Vitamin A supplementation',
-    'Complementary feeding education',
-    'Public provision of complementary foods',
-    'Breastfeeding promotion',
-    'Balanced energy-protein supplementation',
-    'Multiple micronutrient supplementation'
+    'fval'                                    REAL,
+    'Prophylactic zinc supplementation'       REAL,
+    'Vitamin A supplementation'               REAL,
+    'Complementary feeding education'         REAL,
+    'Public provision of complementary foods' REAL,
+    'Breastfeeding promotion'                 REAL,
+    'Balanced energy-protein supplementation' REAL,
+    'Multiple micronutrient supplementation'  REAL
     )
   """)
 

@@ -32,10 +32,11 @@ $(function() {
         console.log(resp);
 
         var request = $.ajax({
-            url: "http://ryan.cengia.id.au:5000/api/v1.0/query",
+            url: "/api/v1.0/query",
             type: "POST",
-            data: resp,
-            dataType: "application/json"
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(resp),
+            dataType: "json"
         });
 
         request.done(function(msg) {

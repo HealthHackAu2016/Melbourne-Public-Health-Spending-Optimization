@@ -1,4 +1,7 @@
-var data = {
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+    data: {
         labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
         datasets: [{
             label: 'Amounts',
@@ -23,7 +26,14 @@ var data = {
             borderWidth: 1,
             data: [25, 45, 10, 50, 2, 3, 12]
         }]
-    };
-
-var ctx = document.getElementById("myChart").getContext("2d");
-var myChart = new Chart(ctx).Bar(data);
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+});

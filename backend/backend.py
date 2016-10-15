@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct 15 11:04:49 2016
@@ -28,34 +29,23 @@ def getResult(interventionConstraints):
     # make the SQL query string
     queryString = 'SELECT * FROM data WHERE'
     for intervention in interventionConstraints:
-        minStr = str(interventionConstraints[intervention]['min'])   
-        maxStr = str(interventionConstraints[intervention]['max']) 
+        minStr = str(interventionConstraints[intervention]['min'])
+        maxStr = str(interventionConstraints[intervention]['max'])
         stringToAdd = " " + '"' + intervention + '"' + " BETWEEN '" + minStr + "' AND '" + maxStr + "' AND"
         queryString += stringToAdd
-   
+
    # remove the final 'AND' and put a semicolon on the end
-    queryString = queryString[:len(queryString)-4]   
+    queryString = queryString[:len(queryString)-4]
     queryString += ';'
-   
+
    # SQL call to get all entries that meet the criteria
     results = query(queryString)
-   
+
    # search through the set returned and return the best
-    best = results[0]   
+    best = results[0]
     for result in results:
         if result[0] < best[0]:
             best = result
-   # returb the best         
+   # returb the best
     return best
-    
-    
-interventionConstraints = {}
-interventionConstraints["Breastfeeding promotion"] = {}
-interventionConstraints["Breastfeeding promotion"]['min'] = 1000
-interventionConstraints["Breastfeeding promotion"]['max'] = 2000
-interventionConstraints["Multiple micronutrient supplementation"] = {}
-interventionConstraints["Multiple micronutrient supplementation"]['min'] = 1000
-interventionConstraints["Multiple micronutrient supplementation"]['max'] = 2000
-    
-best = getResult(interventionConstraints)
-print best    
+

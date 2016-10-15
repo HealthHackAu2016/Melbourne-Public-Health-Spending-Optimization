@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 def runQuery():
     # Abort if we didn't receive a JSON query
     if not flask.request.json:
-        abort(400)
+        flask.abort(400)
 
     # Map column/field full names to their short names used in the frontend
     fields = {  "Prophylactic zinc supplementation":         "zinc",

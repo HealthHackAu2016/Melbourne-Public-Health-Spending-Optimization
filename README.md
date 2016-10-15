@@ -19,6 +19,7 @@ Frank	| PM
 
  Name | Tech
 ------------- | -------------
-Front End | Bootstrap  
-Database | SQL
+Front End | Html CSS Bootstrap  
+Database | sqlite3
 Back End code | Python
+API | Python flask

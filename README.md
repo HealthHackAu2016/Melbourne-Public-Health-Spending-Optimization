@@ -14,3 +14,11 @@ Ruth  | Back end
 Matt  | Back end
 Sally	| Front end
 Frank	| PM
+
+# Tech Stack
+
+ Name | Tech
+------------- | -------------
+Front End | Bootstrap  
+Database | SQL
+Back End code | Python

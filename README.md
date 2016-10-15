@@ -15,4 +15,4 @@ Matt  | Back end
 Kevin | Front end
 Sally	| Front end
 Peter	| UX Design
-Frank	| Project manager
+Frank	| PM

@@ -20,7 +20,7 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -64,68 +64,83 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
+        <div class="col-md-4">
+  <!-- display the best optimisation graph here -->
+  <div id="best">
+  </div>
+</div>
 <div class="col-md-4">
   <h2>Choose the constraints</h2>
-  <form name="contraint-input">
-<div class="form-group">
-  <label for="budget">Budget:</label>
-  <input type="number" class="form-control" id="Budget" placeholder="25,000,000">
-</div>
+  <form name="constraint-input" id="constraints" action"/">
+<p>The total budget amount is $25,000,000.00 </p>
 <div class="form-group">
   <h3>Prophylactic zinc supplementation</h3>
-  <label for"zinc-min">Min. amount</label>
+  <label for"zinc-min">Min. </label>
   <input type="number" class="form-control" id="zinc-min">
-  <label for="zinc-max">Max. amount</label>
+  <label for="zinc-max">Max. </label>
   <input type="number" class="form-control" id="zinc-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Vitamin A supplementation</h3>
-  <label for"vitA-min">Min. amount</label>
+  <label for"vitA-min">Min. </label>
   <input type="number" class="form-control" id="vitA-min">
-  <label for="vitA-max">Max. amount</label>
+  <label for="vitA-max">Max. </label>
   <input type="number" class="form-control" id="vitA-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Complementary feeding education</h3>
-  <label for"edu-min">Min. amount</label>
+  <label for"edu-min">Min. </label>
   <input type="number" class="form-control" id="edu-min">
-  <label for="edu-max">Max. amount</label>
+  <label for="edu-max">Max. </label>
   <input type="number" class="form-control" id="edu-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Public provision of complementary foods</h3>
-  <label for"compfood-min">Min. amount</label>
+  <label for"compfood-min">Min. </label>
   <input type="number" class="form-control" id="compfood-min">
-  <label for="compfood-max">Max. amount</label>
+  <label for="compfood-max">Max. </label>
   <input type="number" class="form-control" id="compfood-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Breastfeeding promotion</h3>
-  <label for"bfpromo-min">Min. amount</label>
+  <label for"bfpromo-min">Min. </label>
   <input type="number" class="form-control" id="bfpromo-min">
-  <label for="bfpromo-max">Max. amount</label>
+  <label for="bfpromo-max">Max. </label>
   <input type="number" class="form-control" id="bfpromo-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Balanced energy-protein supplementation</h3>
-  <label for"beps-min">Min. amount</label>
+  <label for"beps-min">Min. </label>
   <input type="number" class="form-control" id="beps-min">
-  <label for="beps-max">Max. amount</label>
+  <label for="beps-max">Max. </label>
   <input type="number" class="form-control" id="beps-max">
 </div>
+<br />
 <div class="form-group">
   <h3>Multiple micronutrient supplementation</h3>
-  <label for"micros-min">Min. amount</label>
+  <label for"micros-min">Min. </label>
   <input type="number" class="form-control" id="micros-min">
-  <label for="micros-max">Max. amount</label>
+  <label for="micros-max">Max. </label>
   <input type="number" class="form-control" id="micros-max">
 </div>
-<button type="submit" class="btn btn-default">Calculate</button>
+<button type="submit" class="btn btn-default">Go</button>
   </form>
+</div> 
+
+<div class="col-md-4">
+  <div id="constrained">
+
+  </div>
+
 </div>
       </div>
 
-      <div class="row">
+      <!--div class="row">
         <div class="col-md-4">
           <h2>Heading</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -141,29 +156,31 @@
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-      </div>
+      </div -->
 
       <hr>
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Dr Ruth Pearson 2016</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </div> <!-- /container -->        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        <!--script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        </script-->
     </body>
 </html>

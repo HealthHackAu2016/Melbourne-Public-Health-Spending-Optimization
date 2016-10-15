@@ -3,7 +3,22 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+#constraints input{
+ width: 30%;
+ float: left;
+ margin: 10px;
 
+}
+
+#constraints label{
+position: relative;
+
+
+}
+
+.clear {
+    clear: both;
+}
 
 
 

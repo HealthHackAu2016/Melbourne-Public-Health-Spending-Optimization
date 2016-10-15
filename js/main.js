@@ -1,1 +1,6 @@
+$.fn.serializeObject = function()
+{
 
+
+    
+}

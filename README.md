@@ -23,3 +23,35 @@ Front End | Html CSS Bootstrap
 Database | sqlite3
 Back End code | Python
 API | Python flask
+
+# Usage
+
+1.  Ensure you are running Python 2 (verified to work on Python 2.7) with 'flask' installed.
+
+2.  Clone this repository and 'cd' into it:
+
+        $ git clone https://github.com/HealthHackAu2016/Melbourne-Public-Health-Spending-Optimization
+        $ cd Melbourne-Public-Health-Spending-Optimization/backend
+
+3.  Put the CSV file with your data in it, in the 'backend' directory, and ensure it has a '.csv' extension.
+
+    The code expects a CSV of the following form:
+
+        fval,Prophylactic zinc supplementation,Vitamin A supplementation,Complementary feeding education,Public provision of complementary foods,Breastfeeding promotion,Balanced energy-protein supplementation,Multiple micronutrient supplementation
+        16707419.72,1591551.598,1.23E-12,23102844.5,4.91E-12,100.9444001,0,37.65997984
+
+4.  Generate a database from the CSV. The database will be called 'database.db' in the 'backend' directory:
+
+        $ python import_data.py
+
+5.  Start the backend API:
+
+        $ python api.py
+         * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+         * Restarting with stat
+         * Debugger is active!
+         * Debugger pin code: 123-456-789
+
+6.  Browse to http://127.0.0.1:5000/static/index.html
+
+7.  Now you should be ready to run queries on your data!

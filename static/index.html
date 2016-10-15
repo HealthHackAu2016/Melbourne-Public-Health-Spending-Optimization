@@ -53,23 +53,25 @@
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <!--div class="jumbotron"></div-->
       <div class="container">
         <h1>Public Health Spending Optimisation</h1>
         <p>This is a simple web app to assist countries in determining how to best spend funds to target stunting.</p>
         <!-- p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p -->
       </div>
-    </div>
+    
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
   <!-- display the best optimisation graph here -->
-  
+  <div class="container">
+    <p><strong>Number of people stunted:</strong> 16707419.72</p>
+  </div>
     <canvas id="myChart" width="200" height="400"></canvas>
 
-  
+     
 </div>
 <div class="col-md-4">
   <h2>Choose the constraints</h2>
@@ -82,15 +84,15 @@
   <label for="zinc-max">Max. </label>
   <input type="number" class="form-control" id="zinc-max" name="zinc-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Vitamin A supplementation</h3>
-  <label for"vitA-min">Min. 
-  <input type="number" class="form-control" id="vitA-min" name="vitA-min"></label>
-  <label for="vitA-max">Max. 
-  <input type="number" class="form-control" id="vitA-max" name="vitA-max"></label>
+  <label for"vitA-min">Min. </label>
+  <input type="number" class="form-control" id="vitA-min" name="vitA-min">
+  <label for="vitA-max">Max. </label>
+  <input type="number" class="form-control" id="vitA-max" name="vitA-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Complementary feeding education</h3>
   <label for"edu-min">Min. </label>
@@ -98,7 +100,7 @@
   <label for="edu-max">Max. </label>
   <input type="number" class="form-control" id="edu-max" name="edu-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Public provision of complementary foods</h3>
   <label for"compfood-min">Min. </label>
@@ -106,7 +108,7 @@
   <label for="compfood-max">Max. </label>
   <input type="number" class="form-control" id="compfood-max" name="compfood-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Breastfeeding promotion</h3>
   <label for"bfpromo-min">Min. </label>
@@ -114,7 +116,7 @@
   <label for="bfpromo-max">Max. </label>
   <input type="number" class="form-control" id="bfpromo-max" name="bfpromo-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Balanced energy-protein supplementation</h3>
   <label for"beps-min">Min. </label>
@@ -122,7 +124,7 @@
   <label for="beps-max">Max. </label>
   <input type="number" class="form-control" id="beps-max" name="beps-max">
 </div>
-<br />
+
 <div class="form-group">
   <h3>Multiple micronutrient supplementation</h3>
   <label for"micros-min">Min. </label>
@@ -133,41 +135,15 @@
 <button type="submit" class="btn btn-default">Go</button>
   </form>
 </div> 
-<!--script>
-  $.fn.serializeObject = function()
-{
 
-var postData = {};
-
-var fdata = this.serializeArray();
-$.each( fdata, function() {
-    if(postData[this.name] !== undefined) {
-        if (!postData[this.name].push) {
-            postData[this.name] = [postData[this.name]];
-        }
-        postData[this.name].push(this.value || '');
-    } else {
-        postData[this.name] = this.value || '';
-    }
-
-});
-return postData;
-
-};
-
-$(function() {
-
-    $('#constraints').submit(function() {
-        $('#result').text(JSON.stringify($('#constraints').serializeObject()));
-        return false;
-    });
-
-});</script-->
 
 <div class="col-md-4">
-  <div id="result">
-
+  <div class="container">
+    <p><strong>Number of people stunted:</strong> 16710300.15</p>
   </div>
+  
+<canvas id="myResultChart" width="200" height="400"></canvas>
+  <div id="result"></div>
 
 </div>
       </div>
@@ -203,43 +179,51 @@ $(function() {
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.min.js"</script>
-    <script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+       
+   <script>
 
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [1591551.598, 0.00000000000123, 23102844.5, 0.0000000000049100000, 100.9444001, 0, 37.65997984]
+    }]
+  }
+});
 
+var resultData= [6.837015246, 	0.179626545, 24694524.49, 1.262295447,  0.045568297, 0.320181809, 1.566272582]
 
-var data = {
-        labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
-        datasets: [{
-            label: 'Amounts',
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(238, 41, 189, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(238, 41, 189, 1)'
-            ],
-            borderWidth: 1,
-            data: [25, 45, 10, 50, 2, 3, 12]
-        }]
-    };
-
-window.onload = function(){
-var ctx = document.getElementById("myChart").getContext("2d");
-var myChart = new Chart(ctx).Bar(data);
-};
+var ctx = document.getElementById("myResultChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: resultData
+    }]
+  }
+});
       </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--script>

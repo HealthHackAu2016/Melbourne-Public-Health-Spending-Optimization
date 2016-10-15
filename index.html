@@ -71,71 +71,101 @@
 </div>
 <div class="col-md-4">
   <h2>Choose the constraints</h2>
-  <form name="constraint-input" id="constraints" action"/">
+  <form name="constraint-input" id="constraints" action="" method="POST">
 <p>The total budget amount is $25,000,000.00 </p>
 <div class="form-group">
   <h3>Prophylactic zinc supplementation</h3>
   <label for"zinc-min">Min. </label>
-  <input type="number" class="form-control" id="zinc-min">
+  <input type="number" class="form-control" id="zinc-min" name="zinc-min">
   <label for="zinc-max">Max. </label>
-  <input type="number" class="form-control" id="zinc-max">
+  <input type="number" class="form-control" id="zinc-max" name="zinc-max">
 </div>
 <br />
 <div class="form-group">
   <h3>Vitamin A supplementation</h3>
-  <label for"vitA-min">Min. </label>
-  <input type="number" class="form-control" id="vitA-min">
-  <label for="vitA-max">Max. </label>
-  <input type="number" class="form-control" id="vitA-max">
+  <label for"vitA-min">Min. 
+  <input type="number" class="form-control" id="vitA-min" name="vitA-min"></label>
+  <label for="vitA-max">Max. 
+  <input type="number" class="form-control" id="vitA-max" name="vitA-max"></label>
 </div>
 <br />
 <div class="form-group">
   <h3>Complementary feeding education</h3>
   <label for"edu-min">Min. </label>
-  <input type="number" class="form-control" id="edu-min">
+  <input type="number" class="form-control" id="edu-min" name="edu-min">
   <label for="edu-max">Max. </label>
-  <input type="number" class="form-control" id="edu-max">
+  <input type="number" class="form-control" id="edu-max" name="edu-max">
 </div>
 <br />
 <div class="form-group">
   <h3>Public provision of complementary foods</h3>
   <label for"compfood-min">Min. </label>
-  <input type="number" class="form-control" id="compfood-min">
+  <input type="number" class="form-control" id="compfood-min" name="compfood-min">
   <label for="compfood-max">Max. </label>
-  <input type="number" class="form-control" id="compfood-max">
+  <input type="number" class="form-control" id="compfood-max" name="compfood-max">
 </div>
 <br />
 <div class="form-group">
   <h3>Breastfeeding promotion</h3>
   <label for"bfpromo-min">Min. </label>
-  <input type="number" class="form-control" id="bfpromo-min">
+  <input type="number" class="form-control" id="bfpromo-min" name="bfpromo-min">
   <label for="bfpromo-max">Max. </label>
-  <input type="number" class="form-control" id="bfpromo-max">
+  <input type="number" class="form-control" id="bfpromo-max" name="bfpromo-max">
 </div>
 <br />
 <div class="form-group">
   <h3>Balanced energy-protein supplementation</h3>
   <label for"beps-min">Min. </label>
-  <input type="number" class="form-control" id="beps-min">
+  <input type="number" class="form-control" id="beps-min" name="beps-min">
   <label for="beps-max">Max. </label>
-  <input type="number" class="form-control" id="beps-max">
+  <input type="number" class="form-control" id="beps-max" name="beps-max">
 </div>
 <br />
 <div class="form-group">
   <h3>Multiple micronutrient supplementation</h3>
   <label for"micros-min">Min. </label>
-  <input type="number" class="form-control" id="micros-min">
+  <input type="number" class="form-control" id="micros-min" name="micros-min">
   <label for="micros-max">Max. </label>
-  <input type="number" class="form-control" id="micros-max">
+  <input type="number" class="form-control" id="micros-max" name="micros-max">
 </div>
 <button type="submit" class="btn btn-default">Go</button>
   </form>
 </div> 
+<!--script>
+  $.fn.serializeObject = function()
+{
+
+var postData = {};
+
+var fdata = this.serializeArray();
+$.each( fdata, function() {
+    if(postData[this.name] !== undefined) {
+        if (!postData[this.name].push) {
+            postData[this.name] = [postData[this.name]];
+        }
+        postData[this.name].push(this.value || '');
+    } else {
+        postData[this.name] = this.value || '';
+    }
+
+});
+return postData;
+
+};
+
+$(function() {
+
+    $('#constraints').submit(function() {
+        $('#result').text(JSON.stringify($('#constraints').serializeObject()));
+        return false;
+    });
+
+});</script-->
 
 <div class="col-md-4">
-  <div id="constrained">
+  <pre id="result">
 
-  </div>
+  </pre>
 
 </div>
       </div>
@@ -164,7 +194,7 @@
         <p>&copy; Dr Ruth Pearson 2016</p>
       </footer>
     </div> <!-- /container -->        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>

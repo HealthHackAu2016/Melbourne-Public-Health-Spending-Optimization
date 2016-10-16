@@ -207,6 +207,27 @@ var myChart = new Chart(ctx, {
   }
 });
 
+var resultData= [6.837015246,   0.179626545, 24694524.49, 1.262295447,  0.045568297, 0.320181809, 1.566272582]
+
+var ctx = document.getElementById("myResultChart").getContext('2d');
+var myResultChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: resultData
+    }]
+  }
+});
 
 
       </script>

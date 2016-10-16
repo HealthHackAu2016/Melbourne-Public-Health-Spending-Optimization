@@ -41,6 +41,8 @@ def getResult(interventionConstraints):
    # SQL call to get all entries that meet the criteria
     results = query(queryString)
 
+   # Print query for debugging
+    print(queryString)
    # search through the set returned and return the best
     best = results[0]
     for result in results:

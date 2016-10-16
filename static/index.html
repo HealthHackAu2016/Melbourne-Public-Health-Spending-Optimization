@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Health Spend Optimisation</a>
+          <a class="navbar-brand" href="#">Health Spend Optimisation Tool</a>
         </div>
         <!-- div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
@@ -55,20 +55,21 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <!--div class="jumbotron"></div-->
       <div class="container">
-        <h1>Public Health Spending Optimisation</h1>
-        <p>This is a simple web app to assist countries in determining how to best spend funds to target stunting.</p>
+        <h1>Reducing stunting in children under 5</h1>
+        <p class="info">This is a web app to allocate public health funding optimally to target stunting.</p>
+        <p class="info">Data: an example country in Asia</p>
         <!-- p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p -->
       </div>
     
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
+      <div class="row" id="generate">
         <div class="col-md-4">
   <!-- display the best optimisation graph here -->
-  <div class="container">
-    <h2>Best optimisation of budget</h2>
-    <p>Number of people stunted: <strong><span id="best-fval">16707419.72</span></strong></p>
+  <div class="content">
+    <h2>Recommended optimal budget scenario</h2>
+    <p>Number of stunting cases by 2030: <strong><span id="best-fval">16707419.72</span></strong></p>
   </div>
     <canvas id="myChart" width="200" height="400"></canvas>
 
@@ -77,8 +78,9 @@
 <div class="col-md-4">
 
   <h2>Choose the constraints</h2>
+
   <form name="constraint-input" id="constraints" action="" method="POST">
-<p>The total budget amount is $25,000,000.00 </p>
+<h3>Total budget amount is $25 million</h3>
 <div class="form-group">
   <h3>Prophylactic zinc supplementation</h3>
   <label for"zinc-min">Min. </label>
@@ -141,9 +143,9 @@
 
 
 <div class="col-md-4">
-  <div class="container">
-    <h2> Most optimal use of budget with constraints</h2>
-    <p>Number of people stunted: <strong><span id="fval">16710300.15</span></strong></p>
+  <div class="content">
+    <h2>Constrained budget optimal scenario</h2>
+    <p>Number of stunting cases by 2030: <strong><span id="fval">16710300.15</span></strong></p>
   </div>
   
 <canvas id="myResultChart" width="200" height="400"></canvas>

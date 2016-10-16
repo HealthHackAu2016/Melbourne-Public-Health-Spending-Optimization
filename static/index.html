@@ -67,13 +67,15 @@
         <div class="col-md-4">
   <!-- display the best optimisation graph here -->
   <div class="container">
-    <p><strong>Number of people stunted:</strong> 16707419.72</p>
+    <h2>Best optimisation of budget</h2>
+    <p>Number of people stunted: <strong><span id="best-fval">16707419.72</span></strong></p>
   </div>
     <canvas id="myChart" width="200" height="400"></canvas>
 
      
 </div>
 <div class="col-md-4">
+
   <h2>Choose the constraints</h2>
   <form name="constraint-input" id="constraints" action="" method="POST">
 <p>The total budget amount is $25,000,000.00 </p>
@@ -134,12 +136,14 @@
 </div>
 <button type="submit" class="btn btn-default">Go</button>
   </form>
+
 </div> 
 
 
 <div class="col-md-4">
   <div class="container">
-    <p><strong>Number of people stunted:</strong> 16710300.15</p>
+    <h2> Most optimal use of budget with constraints</h2>
+    <p>Number of people stunted: <strong><span id="fval">16710300.15</span></strong></p>
   </div>
   
 <canvas id="myResultChart" width="200" height="400"></canvas>
@@ -177,10 +181,10 @@
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
-       
+       <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
    <script>
 
 var ctx = document.getElementById("myChart").getContext('2d');
@@ -203,27 +207,8 @@ var myChart = new Chart(ctx, {
   }
 });
 
-var resultData= [6.837015246, 	0.179626545, 24694524.49, 1.262295447,  0.045568297, 0.320181809, 1.566272582]
 
-var ctx = document.getElementById("myResultChart").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ["Prophylactic zinc supplementation", "Vitamin A supplementation", "Complementary feeding education", "Public provision of complementary foods", "Breastfeeding promotion", "Balanced energy-protein supplementation", "Multiple micronutrient supplementation"],
-    datasets: [{
-      backgroundColor: [
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-      ],
-      data: resultData
-    }]
-  }
-});
+
       </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--script>

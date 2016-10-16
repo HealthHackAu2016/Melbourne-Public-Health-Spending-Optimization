@@ -59,6 +59,7 @@ $(function() {
       resultobj.micros ];
 
       console.log(resultArray);
+      document.getElementById("fval").innerHTML=resultobj.fval;
       /* chart update here */
       myResultChart.data["datasets"][0]["data"] = resultArray;
       myResultChart.update();

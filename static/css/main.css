@@ -16,9 +16,27 @@ position: relative;
 
 }
 
+.info {
+     font-size: 16px;
+}
+ 
+#generate h2 {
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#generate p {
+ font-size: 20px;
+
+}
+
+#generate span {
+
+font-size: 24px;
+color: #0000ff;
 
 
-
+}
 
 
 
